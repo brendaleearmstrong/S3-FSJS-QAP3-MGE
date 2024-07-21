@@ -1,9 +1,47 @@
-# tests/test_cases.txt
+1. Test Scenario: Viewing All Menu Items
+   User Story: As a Martha's Good Eats customer, I can see a web page listing all the Menu_Items from the database.
+   Steps:
+   - Navigate to `http://localhost:3000/`.
+   - Verify that all menu items are displayed with their name, description, price, category, calories, and availability.
 
-1. As a Martha's Good Eats customer, I can see a web page listing all the Menu_Items from the database.
-2. As a Martha's Good Eats business partner, I can fetch all the Menu_Items from the database via a REST API. The records will be returned as JSON data.
-3. As a Martha's Good Eats staff member, I can see a web page that allows me to add a new item to the Menu_Items table of the database.
-4. As a Martha's Good Eats manager, I can update all details of a menu item using a PUT request to the API.
-5. As a Martha's Good Eats shift supervisor, I can update only the availability status of a menu item using a PATCH request to the API.
-6. As a Martha's Good Eats inventory controller, I can delete a menu item from the Menu_Items table using the web interface, which should reflect immediately in the database.
-7. As a Martha's Good Eats chef, I can view the details of a specific menu item by its ID, both through the web interface and the API.
+2. Test Scenario: Fetching All Menu Items via API
+   User Story: As a Martha's Good Eats business partner, I can fetch all the Menu_Items from the database via a REST API. The records will be returned as JSON data.
+   Steps:
+   - Make a GET request to `http://localhost:3000/api/menu_items`.
+   - Verify the JSON response contains all menu items with their details.
+
+3. Test Scenario: Adding a New Menu Item
+   User Story: As a Martha's Good Eats staff member, I can see a web page that allows me to add a new item to the Menu_Items table of the database.
+   Steps:
+   - Navigate to `http://localhost:3000/add`.
+   - Fill out the form with the new item details.
+   - Submit the form.
+   - Verify the new item is added to the database and displayed on the menu page.
+
+4. Test Scenario: Updating a Menu Item via PUT Request
+   User Story: As a Martha's Good Eats manager, I can update all details of a menu item using a PUT request to the API.
+   Steps:
+   - Make a PUT request to `http://localhost:3000/api/menu_items/:id` with the updated details.
+   - Verify the item's details are updated in the database.
+
+5. Test Scenario: Updating Only the Price via PATCH Request
+   User Story: As a Martha's Good Eats shift supervisor, I can update only the price of a menu item using a PATCH request to the API.
+   Steps:
+   - Make a PATCH request to `http://localhost:3000/api/menu_items/:id` with the updated price.
+   - Verify the item's price is updated in the database.
+
+6. Test Scenario: Deleting a Menu Item via Web Interface
+   User Story: As a Martha's Good Eats inventory controller, I can delete a menu item from the Menu_Items table using the web interface, which should reflect immediately in the database.
+   Steps:
+   - Navigate to `http://localhost:3000/menu`.
+   - Click the delete button for a menu item.
+   - Confirm the deletion.
+   - Verify the item is removed from the database and no longer displayed on the menu page.
+
+7. Test Scenario: Viewing Details of a Specific Menu Item
+   User Story: As a Martha's Good Eats chef, I can view the details of a specific menu item by its ID, both through the web interface and the API.
+   Steps:
+   - Navigate to `http://localhost:3000/menu/:id`.
+   - Verify the item's details are displayed on the web page.
+   - Make a GET request to `http://localhost:3000/api/menu_items/:id`.
+   - Verify the JSON response contains the item's details.
