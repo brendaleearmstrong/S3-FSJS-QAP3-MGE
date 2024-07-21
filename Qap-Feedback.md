@@ -14,9 +14,8 @@ I spent a total of approximately **17 hours** on this assessment. Here is the br
 I utilized a variety of online resources to complete this assessment, including:
 
 - **Instructor's Lectures**: Revisited several lectures to clarify concepts. 
-- **YouTube**: Watched tutorials on specific topics related to RESTful API design.
-- **Stack Overflow**: Searched for solutions to common issues and errors encountered during development.
-- **OpenAI**: Used AI to run code against Rubric requirements and for debudding
+- **YouTube**: Watched tutorials on specific topics related to RESTful API design. I also reviewed Postman.
+- **OpenAI & Claude AI**: Used AI to run code against Rubric requirements and for debudding my API endpoint issues.
 - **Official Express.js Documentation**: Used for understanding middleware and routing.
 
 ## 3. Assistance from Friends
