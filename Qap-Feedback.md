@@ -5,7 +5,7 @@
 I spent a total of approximately **17 hours** on this assessment. Here is the breakdown of time spent on each part:
 
 - Part 1: Setting up the environment and understanding the requirements - git setup - 1 hours
-- Part 2: Designing and implementing the API and eJS - 8 hours. I spent more time on the views than I anticipated.
+- Part 2: Designing and implementing the API and eJS - 8 hours. I spent more time on this than I anticipated.
 - Part 3: Testing and debugging the API - 6 hours
 - Part 4: Iteration and final touches - 2 hours. 
 
