@@ -19,7 +19,6 @@ This project is a Full Stack JavaScript and Database Integration assignment for 
 - EJS (Embedded JavaScript templating)
 - PostgreSQL
 - PG module
-- Express-session and Connect-flash for session handling and flash messages
 - Method-override for supporting PUT and DELETE methods
 - CSS for styling
 
@@ -67,17 +66,10 @@ This project is a Full Stack JavaScript and Database Integration assignment for 
 - **Update Item**: Click on the "Edit" button on a menu item to update it (Full Update or Partial Update)
 - **Delete Item**: Click on the "Delete" button on a menu item to delete it.
 
-## Flash Messages
-
-Flash messages provide feedback for user actions such as adding, updating, and deleting items. They appear at the top of the page after an action is performed.
-
 ## Iteration and Improvement
 
 This project follows an iterative development process. Continuous improvement and feedback integration are key parts of the development cycle.
 
-## Contributing
-
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
 ## License
 
@@ -85,4 +77,4 @@ This project is licensed under the MIT License.
 
 ---
 
-This project was developed as part of the Full Stack Software Development course. It showcases the integration of frontend and backend technologies to build a complete web application.
+This project was developed as part of the Keyin College Full Stack Software Development course. It showcases the integration of frontend and backend technologies to build a complete web application.
