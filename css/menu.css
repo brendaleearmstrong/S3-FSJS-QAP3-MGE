@@ -1,0 +1,57 @@
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.menu-item-card {
+    background-color: #f8f9fa;
+    color: #156982;
+    font-size: 0.75em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item-image img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.menu-item-details {
+    flex: 1;
+}
+
+.menu-item-details h3 {
+    margin-top: 0;
+}
+
+.menu-item-details p {
+    margin: 5px 0;
+}
+
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px; /* Add space between buttons */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #156982;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #d09440;
+}

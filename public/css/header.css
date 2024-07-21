@@ -1,0 +1,22 @@
+header {
+    background-color: #156982;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header img {
+    height: 125px; /* Increase the height to make the logo bigger */
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #d09440;
+}
