@@ -23,7 +23,7 @@ I did not have assistance
 
 ## 4. Assistance from Support Session
 
-1. I did not receive support to complete this QAP3. I was stuck for a few hours debugging my API as my GET wouldn't display, however I managed to get things resolved on my own. 
+1. I did not receive support to complete this QAP3. I was stuck for a few hours debugging my API as my GET wouldn't display, however I managed to get things resolved on my own without having to go to a support session. 
 
 ## 5. Difficulty Rating and Confidence
 
