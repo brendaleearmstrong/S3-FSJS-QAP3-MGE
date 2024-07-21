@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <title>Update Item - Martha's Good Eats</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <h2>Update Item</h2>
+        <form action="/api/menu_items/<%= item.menu_id %>?_method=PUT" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="<%= item.name %>" required>
+            
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" value="<%= item.description %>" required>
+            
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" value="<%= item.price %>" required>
+            
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="sharables" <%= item.category === 'sharables' ? 'selected' : '' %>>Sharables</option>
+                <option value="mains" <%= item.category === 'mains' ? 'selected' : '' %>>Mains</option>
+                <option value="desserts" <%= item.category === 'desserts' ? 'selected' : '' %>>Desserts</option>
+                <option value="beverages" <%= item.category === 'beverages' ? 'selected' : '' %>>Beverages</option>
+                <option value="appetizers" <%= item.category === 'appetizers' ? 'selected' : '' %>>Appetizers</option>
+            </select>
+            
+            <label for="calories">Calories:</label>
+            <input type="number" id="calories" name="calories" value="<%= item.calories %>" required>
+            
+            <label for="image_url">Image URL:</label>
+            <input type="text" id="image_url" name="image_url" value="<%= item.image_url %>" required>
+            
+            <button type="submit">Update Item</button>
+        </form>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>
