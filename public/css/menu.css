@@ -1,6 +1,6 @@
 .menu-items-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -13,18 +13,21 @@
     border-radius: 8px;
     padding: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .menu-item-image img {
-    max-width: 100px;
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
-    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 .menu-item-details {
     flex: 1;
+    width: 100%;
 }
 
 .menu-item-details h3 {
@@ -38,13 +41,14 @@
 .buttons {
     margin-top: 10px;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Wrap buttons to avoid overflow */
     gap: 10px; /* Add space between buttons */
 }
 
 .button {
     display: inline-block;
     padding: 10px 20px;
-    margin: 5px;
     background-color: #156982;
     color: white;
     text-decoration: none;
@@ -54,4 +58,32 @@
 
 .button:hover {
     background-color: #d09440;
+}
+
+@media (max-width: 1200px) {
+    .menu-items-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .menu-items-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
 }

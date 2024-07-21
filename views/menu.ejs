@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/menu.css">
-    <title>Menu - Martha's Good Eats</title>
+    <title><%= title %></title>
 </head>
 <body>
     <%- include('partials/header') %>
     <main>
         <h2>Menu</h2>
         <div class="menu-items-grid">
-            <% menuItems.forEach(item => { %>
+            <% menuItems.forEach(item => { 
+                if (item.availability) { %>
                 <div class="menu-item-card">
                     <div class="menu-item-image">
                         <img src="<%= item.image_url %>" alt="<%= item.name %>">
@@ -27,13 +28,12 @@
                         <p>Calories: <%= item.calories %></p>
                         <div class="buttons">
                             <a href="/update/<%= item.menu_id %>" class="button">Edit</a>
-                            <form action="/delete/<%= item.menu_id %>" method="GET" style="display: inline;">
-                                <button type="submit" class="button">Delete</button>
-                            </form>
+                            <a href="/delete/<%= item.menu_id %>" class="button">Delete</a>
+                            <a href="/patch/<%= item.menu_id %>" class="button">Patch Price</a>
                         </div>
                     </div>
                 </div>
-            <% }) %>
+            <% } }) %>
         </div>
     </main>
     <%- include('partials/footer') %>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/forms.css">
-    <title>Update Item - Martha's Good Eats</title>
+    <title>Update Menu Item - Martha's Good Eats</title>
 </head>
 <body>
     <%- include('partials/header') %>
@@ -21,7 +21,7 @@
             <input type="text" id="description" name="description" value="<%= item.description %>" required>
             
             <label for="price">Price:</label>
-            <input type="number" id="price" name="price" step="0.01" value="<%= item.price %>" required>
+            <input type="number" id="price" name="price" value="<%= item.price %>" step="0.01" required>
             
             <label for="category">Category:</label>
             <select id="category" name="category" required>
@@ -37,6 +37,9 @@
             
             <label for="image_url">Image URL:</label>
             <input type="text" id="image_url" name="image_url" value="<%= item.image_url %>" required>
+            
+            <label for="availability">Available:</label>
+            <input type="checkbox" id="availability" name="availability" value="true" <%= item.availability ? 'checked' : '' %>>
             
             <button type="submit">Update Item</button>
         </form>

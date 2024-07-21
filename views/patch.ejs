@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <title>Patch Menu Item - Martha's Good Eats</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <h2>Patch Item</h2>
+        <form action="/api/menu_items/<%= item.menu_id %>?_method=PATCH" method="POST">
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" value="<%= item.price %>" step="0.01" required>
+            
+            <button type="submit">Patch Item</button>
+        </form>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>
+
