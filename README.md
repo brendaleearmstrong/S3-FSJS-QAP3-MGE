@@ -19,7 +19,6 @@ This project is a Full Stack JavaScript and Database Integration assignment for 
 - EJS (Embedded JavaScript templating)
 - PostgreSQL
 - PG module
-- Method-override for supporting PUT and DELETE methods
 - CSS for styling
 
 ## Installation
@@ -65,6 +64,7 @@ This project is a Full Stack JavaScript and Database Integration assignment for 
 - **Add Item**: Navigate to `/add` to add a new menu item.
 - **Update Item**: Click on the "Edit" button on a menu item to update it (Full Update or Partial Update)
 - **Delete Item**: Click on the "Delete" button on a menu item to delete it.
+- **Patch Item**: Click on the "Patch Price" button on a menu it to update the item price.
 
 ## Iteration and Improvement
 
