@@ -1,15 +1,9 @@
 # tests/test_cases.txt
 
 1. As a Martha's Good Eats customer, I can see a web page listing all the Menu_Items from the database.
-
 2. As a Martha's Good Eats business partner, I can fetch all the Menu_Items from the database via a REST API. The records will be returned as JSON data.
-
 3. As a Martha's Good Eats staff member, I can see a web page that allows me to add a new item to the Menu_Items table of the database.
-
 4. As a Martha's Good Eats manager, I can update all details of a menu item using a PUT request to the API.
-
 5. As a Martha's Good Eats shift supervisor, I can update only the availability status of a menu item using a PATCH request to the API.
-
 6. As a Martha's Good Eats inventory controller, I can delete a menu item from the Menu_Items table using the web interface, which should reflect immediately in the database.
-
 7. As a Martha's Good Eats chef, I can view the details of a specific menu item by its ID, both through the web interface and the API.
