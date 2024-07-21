@@ -1,64 +1,96 @@
 const express = require('express');
 const router = express.Router();
+const menuItems = require('../dal/menuItems');
 
-const mockMenuItems = [
-    { id: 1, name: 'Mock Item 1', description: 'Description 1', price: 9.99, category: 'Category 1', calories: 200, image_url: '/images/codtacos.png' },
-    { id: 2, name: 'Mock Item 2', description: 'Description 2', price: 14.99, category: 'Category 2', calories: 300, image_url: '/images/beer.png' },
-    // add more mock items as needed
-];
-
-router.get('/menu_items', (req, res) => {
+router.get('/menu_items', async (req, res) => {
     console.log('API: GET request for all menu items');
-    res.json(mockMenuItems);
+    try {
+        const items = await menuItems.getAllItems();
+        console.log(`API: Successfully retrieved ${items.length} menu items`);
+        res.json(items);
+    } catch (error) {
+        console.error('API Error: Failed to get all menu items', error);
+        res.status(500).json({ error: error.message });
+    }
 });
 
-router.get('/menu_items/:id', (req, res) => {
+router.get('/menu_items/:id', async (req, res) => {
     console.log(`API: GET request for menu item with id ${req.params.id}`);
-    const item = mockMenuItems.find(item => item.id === parseInt(req.params.id));
-    if (item) {
-        res.json(item);
-    } else {
-        res.status(404).json({ error: 'Item not found' });
+    try {
+        const item = await menuItems.getItemById(req.params.id);
+        if (item) {
+            console.log(`API: Successfully retrieved menu item with id ${req.params.id}`);
+            res.json(item);
+        } else {
+            console.log(`API: Menu item with id ${req.params.id} not found`);
+            res.status(404).json({ error: 'Item not found' });
+        }
+    } catch (error) {
+        console.error(`API Error: Failed to get menu item with id ${req.params.id}`, error);
+        res.status(500).json({ error: error.message });
     }
 });
 
-router.post('/menu_items', (req, res) => {
+router.post('/menu_items', async (req, res) => {
     console.log('API: POST request to create new menu item', req.body);
-    const newItem = { id: mockMenuItems.length + 1, ...req.body };
-    mockMenuItems.push(newItem);
-    res.status(201).json(newItem);
+    try {
+        const newItem = await menuItems.createItem(req.body);
+        console.log('API: Successfully created new menu item', newItem);
+        res.status(201).json(newItem);
+    } catch (error) {
+        console.error('API Error: Failed to create new menu item', error);
+        res.status(500).json({ error: error.message });
+    }
 });
 
-router.put('/menu_items/:id', (req, res) => {
+router.put('/menu_items/:id', async (req, res) => {
     console.log(`API: PUT request to update menu item with id ${req.params.id}`, req.body);
-    const itemIndex = mockMenuItems.findIndex(item => item.id === parseInt(req.params.id));
-    if (itemIndex !== -1) {
-        mockMenuItems[itemIndex] = { ...mockMenuItems[itemIndex], ...req.body };
-        res.json(mockMenuItems[itemIndex]);
-    } else {
-        res.status(404).json({ error: 'Item not found' });
+    try {
+        const updatedItem = await menuItems.updateItem(req.params.id, req.body);
+        if (updatedItem) {
+            console.log(`API: Successfully updated menu item with id ${req.params.id}`);
+            res.json(updatedItem);
+        } else {
+            console.log(`API: Menu item with id ${req.params.id} not found for update`);
+            res.status(404).json({ error: 'Item not found' });
+        }
+    } catch (error) {
+        console.error(`API Error: Failed to update menu item with id ${req.params.id}`, error);
+        res.status(500).json({ error: error.message });
     }
 });
 
-router.patch('/menu_items/:id', (req, res) => {
+router.patch('/menu_items/:id', async (req, res) => {
     console.log(`API: PATCH request to update menu item with id ${req.params.id}`, req.body);
-    const itemIndex = mockMenuItems.findIndex(item => item.id === parseInt(req.params.id));
-    if (itemIndex !== -1) {
-        mockMenuItems[itemIndex] = { ...mockMenuItems[itemIndex], ...req.body };
-        res.json(mockMenuItems[itemIndex]);
-    } else {
-        res.status(404).json({ error: 'Item not found' });
+    try {
+        const patchedItem = await menuItems.patchItem(req.params.id, req.body);
+        if (patchedItem) {
+            console.log(`API: Successfully patched menu item with id ${req.params.id}`);
+            res.json(patchedItem);
+        } else {
+            console.log(`API: Menu item with id ${req.params.id} not found for patch`);
+            res.status(404).json({ error: 'Item not found' });
+        }
+    } catch (error) {
+        console.error(`API Error: Failed to patch menu item with id ${req.params.id}`, error);
+        res.status(500).json({ error: error.message });
     }
 });
 
-router.delete('/menu_items/:id', (req, res) => {
+router.delete('/menu_items/:id', async (req, res) => {
     console.log(`API: DELETE request for menu item with id ${req.params.id}`);
-    const itemIndex = mockMenuItems.findIndex(item => item.id === parseInt(req.params.id));
-    if (itemIndex !== -1) {
-        mockMenuItems.splice(itemIndex, 1);
-        res.json({ message: 'Item deleted successfully' });
-    } else {
-        res.status(404).json({ error: 'Item not found' });
+    try {
+        const deletedItem = await menuItems.deleteItem(req.params.id);
+        if (deletedItem) {
+            console.log(`API: Successfully deleted menu item with id ${req.params.id}`);
+            res.json({ message: 'Item deleted successfully' });
+        } else {
+            console.log(`API: Menu item with id ${req.params.id} not found for deletion`);
+            res.status(404).json({ error: 'Item not found' });
+        }
+    } catch (error) {
+        console.error(`API Error: Failed to delete menu item with id ${req.params.id}`, error);
+        res.status(500).json({ error: error.message });
     }
 });
 
