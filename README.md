@@ -25,7 +25,7 @@ This project is a Full Stack JavaScript and Database Integration assignment for 
 ## Installation
 
 1. Clone the repository:
-    git clone https://github.com/brendaleearmstrong/S3-FSJS-QAP3-MGE)](https://github.com/brendaleearmstrong/S3-FSJS-QAP3-MGE.git
+    git clone https://github.com/brendaleearmstrong/S3-FSJS-QAP3-MGE
 
 2. Navigate to the project directory:
     cd s3-fsjs-qap3-MGE
