@@ -1,0 +1,23 @@
+{
+  "name": "s3-fsjs-qap3-mge",
+  "version": "1.0.0",
+  "description": "## Project Overview",
+  "main": "testDBConnection.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Brenda Armstrong",
+  "license": "MIT",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "method-override": "^3.0.0",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
