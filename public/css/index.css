@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    color: #d09440;
+}
+
+.hero {
+    text-align: center;
+}
+
+.about-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #156982;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+
+}
+
+footer {
+    background-color: #156982;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+.flash-message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.flash-message.success {
+    background-color: #156982;
+    color: #ffffff;
+}
+
+.flash-message.error {
+    background-color: #f2dede;
+    color: #a94442;
+}
