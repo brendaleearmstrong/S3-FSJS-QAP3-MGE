@@ -2,7 +2,7 @@ const db = require('../config/db');
 
 module.exports = {
     getAllItems: async () => {
-        const result = await db.query('SELECT * FROM public."Menu_Items" WHERE availability = true');
+        const result = await db.query('SELECT * FROM public."Menu_Items");
         return result.rows;
     },
     getItemById: async (id) => {
